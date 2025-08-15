@@ -46,6 +46,8 @@ dorisCluster:
 feSpec:
   # annotations for fe pods and service
   annotations: {}
+  # serviceAccount for FE pods to access cloud services. If set, FE pods will use this ServiceAccount. Default: not set.
+  # serviceAccount: ""
   replicas: 3
   # electionNumber represents `FOLLOWER` number, replicas - electionNumber as `OBSERVER`
   # electionNumber: 3
@@ -214,6 +216,8 @@ feSpec:
 beSpec:
   # annotations for be pods and service
   annotations: {}
+  # serviceAccount for BE pods to access cloud services. If set, BE pods will use this ServiceAccount. Default: not set.
+  # serviceAccount: ""
   replicas: 3
   # the pod labels for user select or classify pods.
   labels: {}
@@ -381,6 +385,8 @@ beSpec:
 cnSpec:
   # annotations for cn pods and service
   annotations: {}
+  # serviceAccount for CN pods to access cloud services. If set, CN pods will use this ServiceAccount. Default: not set.
+  # serviceAccount: ""
   replicas: 3
   # the pod labels for user select or classify pods.
   labels: {}
@@ -564,6 +570,8 @@ cnSpec:
 brokerSpec:
   # annotations for broker pods and service
   annotations: {}
+  # serviceAccount for Broker pods to access cloud services. If set, Broker pods will use this ServiceAccount. Default: not set.
+  # serviceAccount: ""
   replicas: 3
   # the pod labels for user select or classify pods.
   labels: {}

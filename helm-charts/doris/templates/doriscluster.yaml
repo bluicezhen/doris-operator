@@ -42,6 +42,9 @@ spec:
     annotations:
     {{- toYaml .Values.feSpec.annotations | nindent 6 }}
     {{- end }}
+    {{- if .Values.feSpec.serviceAccount }}
+    serviceAccount: {{ .Values.feSpec.serviceAccount }}
+    {{- end }}
     replicas: {{ .Values.feSpec.replicas }}
     {{- if .Values.feSpec.electionNumber }}
     electionNumber: {{ .Values.feSpec.electionNumber }}
@@ -131,6 +134,9 @@ spec:
     annotations:
     {{- toYaml .Values.beSpec.annotations | nindent 6 }}
     {{- end }}
+    {{- if .Values.beSpec.serviceAccount }}
+    serviceAccount: {{ .Values.beSpec.serviceAccount }}
+    {{- end }}
     replicas: {{ .Values.beSpec.replicas }}
     {{- if .Values.beSpec.labels }}
     podLabels:
@@ -217,6 +223,9 @@ spec:
     {{- if .Values.cnSpec.annotations }}
     annotations:
     {{- toYaml .Values.cnSpec.annotations | nindent 6 }}
+    {{- end }}
+    {{- if .Values.cnSpec.serviceAccount }}
+    serviceAccount: {{ .Values.cnSpec.serviceAccount }}
     {{- end }}
     replicas: {{ .Values.cnSpec.replicas }}
 
@@ -315,6 +324,9 @@ spec:
     {{- if .Values.brokerSpec.annotations }}
     annotations:
     {{- toYaml .Values.brokerSpec.annotations | nindent 6 }}
+    {{- end }}
+    {{- if .Values.brokerSpec.serviceAccount }}
+    serviceAccount: {{ .Values.brokerSpec.serviceAccount }}
     {{- end }}
     replicas: {{ .Values.brokerSpec.replicas }}
 
